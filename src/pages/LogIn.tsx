@@ -21,7 +21,7 @@ export default function LogIn() {
                         <button type="submit" form="form"><span>Log In</span></button>
                     </form>
 
-                    <Link className="register" to="/register">Register</Link>
+                    <Link className="register" to="/register">Register →</Link>
                 </div>
 
             </div>
