@@ -5,7 +5,7 @@
 #root {
     width: 100vw;
     height: 100vh;
-    background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/170407220919-06-iconic-mountains-mount-fitz-roy-restricted.jpg);
+    background-image: url(../../images/background.jpg);
     background-size: cover;
     /* opacity: 033; */
 }
@@ -77,4 +77,43 @@ div.login {
 
 img.icon {
     width:100%
+}
+
+#form button {
+    margin-top: 29px;
+    padding: 7px 55px;
+
+    background-color: #f7a738;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#form button:hover {
+    background-color: #e8932e;
+}
+
+.register {
+    padding: 4px 40px;
+
+    background-color: #d1d1d1;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.register:hover {
+    background-color: #bebfc6;
+}
+
+a {
+    text-decoration: none;
 }

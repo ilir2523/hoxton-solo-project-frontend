@@ -14,14 +14,14 @@ export default function LogIn() {
                 </div>
 
                 <div className="login">
-                    <form>
+                    <form id="form">
                         <input type="email" placeholder="Email"></input>
                         <input type="password" placeholder="Password"></input>
 
-                        <button type="submit" form="login-form">Log In</button>
+                        <button type="submit" form="form"><span>Log In</span></button>
                     </form>
 
-                    <Link to="/register">Register</Link>
+                    <Link className="register" to="/register">Register</Link>
                 </div>
 
             </div>
