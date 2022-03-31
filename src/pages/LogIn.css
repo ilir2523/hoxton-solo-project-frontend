@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Lora:ital,wght@1,700&family=Overpass&display=swap');
 
 
-#root {
+div.log-in-background {
     width: 100vw;
     height: 100vh;
     background-image: url(../../images/background.jpg);
     background-size: cover;
 }
 
-#root,
+div.log-in-background,
 .logIn-page,
 .signup-page,
 .signup-wraper,

@@ -1,0 +1,75 @@
+div.home-page-background {
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url(../../images/abstract.png); */
+    background-color: #e7eaf0;
+    background-size: cover;
+    z-index: -1;
+}
+
+.home-page,
+.home-wraper, 
+.home,
+.home-main header {
+    display: grid;
+}
+
+.home-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e7eaf0;
+    opacity: 0.4;
+    place-items: center;
+    z-index: 0;
+}
+
+.home-wraper {
+    width: 90vw;
+    height: 80vh;
+    background-color: #f5f7f9;
+    opacity:1;
+    border-radius: 40px;
+}
+
+.home {
+    padding: 20px;
+    grid-template-columns: 50px 1fr;
+    z-index: 10;
+    color: #000000;
+}
+
+.home header {
+    text-align: center;
+}
+
+.home-main {
+    display: grid;
+    grid-template-rows: 58px 1fr ;
+}
+
+.home-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding: 30px;
+    gap: 2rem;
+}
+
+.home-sections section {
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 5px 15px;
+    height: 200px;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    gap: 7px;
+}
+
+.home-menu {
+    display: grid;
+    place-items: center;
+}
+
+.home-main header {
+    place-items: center start;
+    grid-template-columns: 1fr 100px;
+}
