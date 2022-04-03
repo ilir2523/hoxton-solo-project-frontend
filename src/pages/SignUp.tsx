@@ -19,7 +19,6 @@ export default function SignUp() {
                         <h1>HOXBANK</h1>
                         <img className="icon" src='../../images/bank1.png ' />
                     </div>
-
                     <div className="signup">
                         Great! Give us some details about your account, so we can look you up.
                         <form id="form" onSubmit={e => {

@@ -10,7 +10,8 @@ div.home-page-background {
 .home-page,
 .home-wraper, 
 .home,
-.home-main header {
+.home-main header,
+.home-menu .nav-menu {
     display: grid;
 }
 
@@ -26,7 +27,7 @@ div.home-page-background {
 .home-wraper {
     width: 90vw;
     height: 80vh;
-    background-color: #f5f7f9;
+    background-color: #ffffff;
     opacity:1;
     border-radius: 40px;
 }
@@ -40,12 +41,15 @@ div.home-page-background {
 
 .home header {
     text-align: center;
+    margin: 20px;
 }
 
 .home-main {
     display: grid;
     grid-template-rows: 58px 1fr ;
 }
+
+/* Home Sections */
 
 .home-sections {
     display: grid;
@@ -67,9 +71,80 @@ div.home-page-background {
 .home-menu {
     display: grid;
     place-items: center;
+    border-right: 1px solid #a1a1a1;
+}
+
+.home-menu .nav-menu {
+    grid-template-rows: auto-fit;
 }
 
 .home-main header {
     place-items: center start;
     grid-template-columns: 1fr 100px;
+}
+
+/* Profile */
+
+.profile-page,
+.profile-container,
+.profile-header,
+.profile-main,
+.profile-data,
+.profile-data div {
+    display: grid;
+}
+
+.profile-page {
+    grid-template-rows: 40px 1fr;
+    /* place-items: center start; */
+}
+
+.profile-page h3 {
+    padding-left: 25px;
+}
+
+.profile-container {
+    grid-template-rows: 50px 1fr;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 20px;
+}
+
+.profile-header {
+    grid-template-columns: 40px 1fr;
+    place-items: center start;
+    gap: 20px;
+    border-bottom: 1px solid #000000;
+}
+
+
+.profile-header img {
+    width: 100%;
+    padding: 5px;
+}
+
+.profile-main {
+    grid-template-columns: 150px 1fr;
+    margin: 10px;
+    gap: 10px;
+}
+
+.profile-main ul {
+    list-style: none;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 10px 10px 0 10px;
+    height: 75%;
+    place-self: center;
+}
+
+.profile-data {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap:10px;
+}
+
+.profile-data div {
+    grid-template-rows: auto-fit ;
+    place-items: start;
 }

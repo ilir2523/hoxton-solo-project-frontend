@@ -1,9 +1,17 @@
 import './Home.css'
-import HomeSections from '../components/HomeSections'
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
+import { useStore } from "../Store"
+import { useEffect } from 'react';
 
 
 export default function Home() {
+
+    const fetchUser = useStore(store => store.fetchUser)
+
+    useEffect(() => {
+        fetchUser()
+    }, [])
+
     return (
         <div className="home-page-background">
 
@@ -12,10 +20,10 @@ export default function Home() {
                     <div className="home">
                         <div className="home-menu">
                             <div className="nav-menu">
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                                <div>4</div>
+                                <Link to={'/home'}><img src="../../images/home_black_24dp.svg"/></Link>
+                                <Link to={'/home/profile'}><img src="../../images/account_circle_black_24dp.svg"/></Link>
+                                <Link to={''}><img src="../../images/home_black_24dp.svg"/></Link>
+                                <Link to={''}><img src="../../images/home_black_24dp.svg"/></Link>
                             </div>
 
                         </div>
@@ -24,11 +32,7 @@ export default function Home() {
                                 <div className="search">Search</div>
                                 <div className="profile">Profile</div>
                             </header>
-                            {/* <Routes>
-                                <Route index element={<Navigate to='/home' />} />
-                                <Route path='/home' element={<HomeSections />} />
-                            </Routes> */}
-                            <HomeSections />
+                            <Outlet />
                         </main>
                     </div>
                 </div>
