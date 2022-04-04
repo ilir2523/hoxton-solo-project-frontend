@@ -1,10 +1,29 @@
 import { Link } from 'react-router-dom'
 import "./LogIn.css"
-import { logIn } from '../functions/Functions.jsx'
-import { useState } from 'react'
+import { useStore } from "../Store"
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+
 
 export default function LogIn() {
-    const [user, setUser] = useState()
+
+    const logIn = useStore(store => store.logIn)
+    const navigate = useNavigate()
+    const fetchUser = useStore(store => store.fetchUser)
+   
+    useEffect(() => {
+        fetchUser()
+    }, [])
+
+    const user = useStore(store => store.user)
+    console.log(user)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (user !== null) navigate('/home')
+        }, 1000);
+        return () => clearTimeout(timer);
+    }, [user, navigate])
 
     return (
         <div className="log-in-background">
@@ -25,9 +44,10 @@ export default function LogIn() {
                             const email = e.target.email.value
                             // @ts-ignore
                             const password = e.target.password.value
-                            logIn(email, password, setUser)
+                            logIn(email, password)
+                            navigate('/home')
                             // @ts-ignore
-                            // document.getElementById("form").reset();
+                            document.getElementById("form").reset();
                         }}>
                             <input type="email" placeholder="Email" name="email"></input>
                             <input type="password" placeholder="Password" name="password"></input>

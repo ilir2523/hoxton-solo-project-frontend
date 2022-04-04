@@ -5,14 +5,14 @@ import SignUp from './pages/SignUp'
 import Home from './pages/Home';
 import HomeSections from './components/HomeSections'
 import Profile from './components/Profile'
+import { useStore } from "./Store"
+
 
 
 function App() {
-
-
   return (
     <Routes>
-      <Route index element={<Navigate to='/home' />} />
+      <Route index element={<Navigate to='/logIn' />} />
       <Route path='/logIn' element={<LogIn />} />
       <Route path='/register' element={<SignUp />} />
       <Route path='/home' element={<Home />}>

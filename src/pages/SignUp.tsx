@@ -2,11 +2,15 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./LogIn.css"
 import { signUp } from '../functions/Functions.jsx'
+import { useStore } from "../Store"
+import { useNavigate } from 'react-router-dom'
 
 
 export default function SignUp() {
-    const [user, setUser] = useState()
+    const user = useStore(store => store.user)
     console.log(user)
+    const signUp = useStore(store => store.signUp)
+    const navigate = useNavigate()
 
     return (
         <div className="log-in-background">
@@ -36,7 +40,8 @@ export default function SignUp() {
                             // @ts-ignore
                             const password = e.target.password.value
                             console.log(name, email, phone, address, dateOfBirth, password)
-                            signUp(name, email, phone, address, dateOfBirth, password, setUser)
+                            signUp(name, email, phone, address, dateOfBirth, password)
+                            navigate('/home')
                             // @ts-ignore
                             // document.getElementById("form").reset();
                         }}>

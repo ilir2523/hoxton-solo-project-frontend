@@ -2,13 +2,7 @@ import { useEffect } from "react"
 import { useStore } from "../Store"
 
 export default function Profile() {
-    // User State
-    // const fetchUser = useStore(store => store.fetchUser)
     const user = useStore(store => store.user)
-
-    // useEffect(() => {
-    //     fetchUser()
-    // }, [])
 
     console.log(user)
     if (user === null) return <h1>Loading...</h1>
