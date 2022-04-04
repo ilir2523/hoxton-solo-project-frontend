@@ -148,3 +148,43 @@ div.home-page-background {
     grid-template-rows: auto-fit ;
     place-items: start;
 }
+
+/* Recent acctivity */
+
+.activity-container {
+    display: grid;
+    gap: 0.5em;
+    /* overflow-y: scroll; */
+
+}
+
+.activity {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+    place-items: start center;
+    border-top: 1px solid #000000;
+}
+
+/* Payment */
+
+.payments-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    gap: 0.5em;
+    place-items: center;
+}
+
+.payment {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    place-items: center;
+    font-size: 0.7rem;
+}
+
+.payment img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
