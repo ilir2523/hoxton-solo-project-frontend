@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore } from '../Store'
 import { numberWithCommas } from '../functions/Functions'
+import Transaction from './Transaction'
 
 export default function HomeSections() {
 
@@ -16,49 +17,69 @@ export default function HomeSections() {
 
         return (
             <div className="home-sections">
-                <section>
+                <section className="accounts-section">
                     <h2>My Accounts</h2>
                     <div className="accounts">
-                        <div><Link to="#">{"Current & Savings: "}{savingsAccount?.currency} {savingsAccount ? numberWithCommas(savingsAccount?.amountInAccount) : null}</Link></div>
-                        <div><Link to="#">Term Deposits</Link></div>
-                        <div><Link to="#">Loans and Finances</Link></div>
-                        <div><Link to="#">Credit Card</Link></div>
+                        <div>
+                            <Link to="#">
+                                <span>{"Current & Savings: "}</span>
+                                <span>{savingsAccount?.currency} {savingsAccount ? numberWithCommas(savingsAccount?.amountInAccount) : null}</span>
+                            </Link>
+                        </div>
+                        <div><Link to="#">
+                            <span>Term Deposits</span>
+                            <span>LEK 00.0</span>
+                        </Link>
+                        </div>
+                        <div><Link to="#">
+                            <span>Loans and Finances</span>
+                            <span>LEK 00.0</span>
+                        </Link>
+                        </div>
+                        <div><Link to="#">
+                            <span>Credit Card</span>
+                            <span>LEK 00.0</span>
+                        </Link>
+                        </div>
                     </div>
                 </section>
-                <section>
+                <section className="payments-section">
                     <h2>Payment</h2>
                     <div className="payments-container">
                         <div className="payment">
-                            <img src="../../images/transfer-money.png" alt="" />
-                            <span className="payment-name">Transfer money</span>
+                            <Link to="#">
+                                <img src="../../images/transfer-money.png" alt="" />
+                                <span className="payment-name">Transfer Money</span>
+                            </Link>
                         </div>
                         <div className="payment">
-                            <img src="../../images/transfer-money.png" alt="" />
-                            <span className="payment-name">Transfer money</span>
+                            <Link to="#">
+                                <img src="../../images/cash-payment.png" alt="" />
+                                <span className="payment-name">Pay Bills</span>
+                            </Link>
                         </div>
                         <div className="payment">
-                            <img src="../../images/transfer-money.png" alt="" />
-                            <span className="payment-name">Transfer money</span>
+                            <Link to="#">
+                                <img src="../../images/debitt-card.png" alt="" />
+                                <span className="payment-name">Debit Card</span>
+                            </Link>
                         </div>
                         <div className="payment">
-                            <img src="../../images/transfer-money.png" alt="" />
-                            <span className="payment-name">Transfer money</span>
+                            <Link to="#">
+                                <img src="../../images/credit-card.png" alt="" />
+                                <span className="payment-name">Credit Card</span>
+                            </Link>
                         </div>
                     </div>
                 </section>
-                <section>
+                <section className="activity-section">
                     <h2>Recent Activity</h2>
                     <div className="activity-container">
                         {savingsAccount?.transactions?.map(transaction => (
-                            <div className="activity" key={transaction.id}>
-                                <span>{transaction.completedAt.substring(0, 10)}</span>
-                                <span>{savingsAccount?.title}</span>
-                                <span>{transaction ? numberWithCommas(transaction?.amount) : null}{transaction.isPositive ? '(+)' : '(-)'}</span>
-                            </div>
+                            <Transaction transaction={transaction} key={transaction.id}/>
                         ))}
                     </div>
                 </section>
-                <section><h2>Quick Access</h2></section>
             </div>
         )
     }

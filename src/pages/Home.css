@@ -2,13 +2,13 @@ div.home-page-background {
     width: 100vw;
     height: 100vh;
     /* background-image: url(../../images/abstract.png); */
-    background-color: #e7eaf0;
+    background-color: #f2f4f8;
     background-size: cover;
     z-index: -1;
 }
 
 .home-page,
-.home-wraper, 
+.home-wraper,
 .home,
 .home-main header,
 .home-menu .nav-menu {
@@ -28,7 +28,7 @@ div.home-page-background {
     width: 90vw;
     height: 80vh;
     background-color: #ffffff;
-    opacity:1;
+    opacity: 1;
     border-radius: 40px;
 }
 
@@ -46,22 +46,37 @@ div.home-page-background {
 
 .home-main {
     display: grid;
-    grid-template-rows: 58px 1fr ;
+    grid-template-rows: 58px 1fr;
 }
 
 /* Home Sections */
 
 .home-sections {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template: "accounts payments" 1fr "activity activity" 1fr / 1fr 1fr;
     padding: 30px;
     gap: 2rem;
+}
+
+.activity-section {
+    display: grid;
+    grid-area: activity;
+}
+
+.accounts-section {
+    display: grid;
+    grid-area: accounts;
+}
+
+.payments-section {
+    display: grid;
+    grid-area: payments;
 }
 
 .home-sections section {
     border: 1px solid #000000;
     border-radius: 20px;
-    padding: 5px 15px;
+    padding: 0.6rem 1rem;
     height: 200px;
     display: grid;
     grid-template-rows: 30px 1fr;
@@ -141,11 +156,11 @@ div.home-page-background {
 
 .profile-data {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap:10px;
+    gap: 10px;
 }
 
 .profile-data div {
-    grid-template-rows: auto-fit ;
+    grid-template-rows: auto-fit;
     place-items: start;
 }
 
@@ -154,7 +169,7 @@ div.home-page-background {
 .activity-container {
     display: grid;
     gap: 0.5em;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 
 }
 
@@ -175,7 +190,7 @@ div.home-page-background {
     place-items: center;
 }
 
-.payment {
+.payment a {
     display: grid;
     grid-template-rows: 50px 1fr;
     place-items: center;
@@ -183,8 +198,22 @@ div.home-page-background {
 }
 
 .payment img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
 }
 
+/* Accounts */
+
+.accounts {
+    display: grid;
+    gap: 0.5em;
+}
+.accounts div a {
+    display: grid;
+    place-items:  center start ;
+    border-left: 3px solid #000000;
+    padding-left: 0.5rem;
+    border-bottom:1px solid rgb(239, 239, 239);
+
+    grid-template-columns: 1fr 0.5fr ;
+}

@@ -3,6 +3,7 @@ import create from 'zustand'
 export const useStore = create((set, get) => ({
 
     user: null,
+    account: null,
     fetchUser: () => {
         if (localStorage.token) {
             fetch('http://localhost:4001/validate', {
@@ -59,5 +60,16 @@ export const useStore = create((set, get) => ({
     signOut: () => {
         localStorage.removeItem('token')
         set({ user: null })
-    } 
+    } ,
+    fetchAccountById: (id) => {
+        return fetch(`http://localhost:4001/account/${id}`)
+            .then(resp => resp.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error)
+                } else {
+                    set({ account: data }) 
+                }
+            })
+    }
 }))
