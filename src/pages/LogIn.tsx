@@ -16,7 +16,7 @@ export default function LogIn() {
     }, [])
 
     const user = useStore(store => store.user)
-    console.log(user)
+    // console.log(user)
 
     useEffect(() => {
         const timer = setTimeout(() => {

@@ -1,10 +1,9 @@
-import { useEffect } from "react"
 import { useStore } from "../Store"
 
 export default function Profile() {
     const user = useStore(store => store.user)
 
-    console.log(user)
+    // console.log(user)
     if (user === null) return <h1>Loading...</h1>
 
     return (
@@ -15,7 +14,6 @@ export default function Profile() {
                     <img src="../../images/man.png" alt="avatar-icon" />
                     <h4>{user.name}</h4>
                 </div>
-                {/* <hr /> */}
                 <div className="profile-main">
                     <ul>
                         <li>Profile</li>

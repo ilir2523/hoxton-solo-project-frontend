@@ -6,6 +6,12 @@ import Transaction from './Transaction'
 
 export default function HomeSections() {
 
+    const fetchUser = useStore(store => store.fetchUser)
+
+    useEffect(() => {
+        fetchUser()
+    }, []);
+
     const user = useStore(store => store.user)
 
     if (!user) return <h1>Loading...</h1>
@@ -13,7 +19,8 @@ export default function HomeSections() {
     if (user) {
 
         const savingsAccount = user?.accounts.find(account => account.type === "Savings")
-        // console.log(savingsAccount)
+        const transactions = savingsAccount?.transactions
+        const recentTransactions = transactions?.slice(transactions.length - 4, transactions.length).reverse()
 
         return (
             <div className="home-sections">
@@ -47,7 +54,7 @@ export default function HomeSections() {
                     <h2>Payment</h2>
                     <div className="payments-container">
                         <div className="payment">
-                            <Link to="#">
+                            <Link to="/home/transferMoney">
                                 <img src="../../images/transfer-money.png" alt="" />
                                 <span className="payment-name">Transfer Money</span>
                             </Link>
@@ -75,7 +82,7 @@ export default function HomeSections() {
                 <section className="activity-section">
                     <h2>Recent Activity</h2>
                     <div className="activity-container">
-                        {savingsAccount?.transactions?.map(transaction => (
+                        {recentTransactions.map(transaction => (
                             <Transaction transaction={transaction} key={transaction.id}/>
                         ))}
                     </div>

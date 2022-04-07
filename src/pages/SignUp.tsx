@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function SignUp() {
     const user = useStore(store => store.user)
-    console.log(user)
+    // console.log(user)
     const signUp = useStore(store => store.signUp)
     const navigate = useNavigate()
 
@@ -39,7 +39,7 @@ export default function SignUp() {
                             const dateOfBirth = e.target.dateOfBirth.value
                             // @ts-ignore
                             const password = e.target.password.value
-                            console.log(name, email, phone, address, dateOfBirth, password)
+                            // console.log(name, email, phone, address, dateOfBirth, password)
                             signUp(name, email, phone, address, dateOfBirth, password)
                             navigate('/home')
                             // @ts-ignore

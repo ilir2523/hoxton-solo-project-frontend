@@ -15,7 +15,7 @@ export default function Home() {
     }, [])
 
     const user = useStore(store => store.user)
-    console.log(user)
+    // console.log(user)
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -34,8 +34,8 @@ export default function Home() {
                             <div className="nav-menu">
                                 <Link to={'/home'}><img src="../../images/home_black_24dp.svg" /></Link>
                                 <Link to={'/home/profile'}><img src="../../images/account_circle_black_24dp.svg" /></Link>
-                                <Link to={''}><img src="../../images/home_black_24dp.svg" /></Link>
-                                <Link to={''}><img src="../../images/home_black_24dp.svg" /></Link>
+                                <Link to={'/home/transferMoney'}><img src="../../images/payments_black_24dp.svg" /></Link>
+                                <Link to={'/home/transactions-page'}><img src="../../images/transactions_black_24dp.svg" /></Link>
                             </div>
 
                         </div>

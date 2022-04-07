@@ -61,6 +61,7 @@ div.home-page-background {
 .activity-section {
     display: grid;
     grid-area: activity;
+    overflow-y: scroll;
 }
 
 .accounts-section {
@@ -169,13 +170,11 @@ div.home-page-background {
 .activity-container {
     display: grid;
     gap: 0.5em;
-    overflow-y: scroll;
-
 }
 
 .activity {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5em;
     place-items: start center;
     border-top: 1px solid #000000;
@@ -216,4 +215,113 @@ div.home-page-background {
     border-bottom:1px solid rgb(239, 239, 239);
 
     grid-template-columns: 1fr 0.5fr ;
+}
+
+/* Paymens page */
+
+.payments-page {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+}
+
+.payments-page h3 {
+    padding-left: 2rem;
+}
+
+.payments-page-container {
+    display: grid;
+    grid-template-rows: 2.5rem 1fr;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 20px;
+}
+
+.transfer-money-header {
+    display: grid;
+    place-items: center start;
+    border-bottom: 1px solid #000000;
+}
+
+.transfer-money-header h4 {
+    padding-left: 1rem;
+}
+
+.transfer-money-main {
+
+    display: grid;
+    place-items: center;
+}
+
+.transfer-money-main form {
+
+    display: grid;
+    grid-auto-flow: row;
+    gap: 0.5em;
+
+    padding: 2.7rem 1.8rem;
+
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+.transfer-money-main form input {
+    padding: 0.5em;
+}
+
+.form-buttons {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 0.5em;
+}
+
+.form-buttons button {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.form-buttons button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* transactions-page */
+
+.transactions-page {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+}
+.transactions-page h3 {
+    padding-left: 2rem;
+}
+
+.transactions-container{
+    display: grid;
+    grid-template-rows: 2.5rem 1fr;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin: 0 20px;
+}
+
+.transactions-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center ;
+    border-bottom: 1px solid #000000;
+}
+
+.transactions-main {
+    display: grid;
+    grid-auto-flow: row;
+    overflow-y: scroll;
+    height: 430px;
+}
+
+.activity-section::-webkit-scrollbar,
+.transactions-main::-webkit-scrollbar {
+    display: none;
 }

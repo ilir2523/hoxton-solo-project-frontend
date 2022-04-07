@@ -5,7 +5,8 @@ import SignUp from './pages/SignUp'
 import Home from './pages/Home';
 import HomeSections from './components/HomeSections'
 import Profile from './components/Profile'
-import { useStore } from "./Store"
+import TransferMoney from './components/TransferMoney'
+import RecentActivity from './components/RecentActivity'
 
 
 
@@ -18,6 +19,8 @@ function App() {
       <Route path='/home' element={<Home />}>
         <Route path='/home' element={<HomeSections />} />
         <Route path='profile' element={<Profile />} />
+        <Route path='transferMoney' element={<TransferMoney />} />
+        <Route path='transactions-page' element={<RecentActivity />} />
       </Route>
     </Routes>
   )
