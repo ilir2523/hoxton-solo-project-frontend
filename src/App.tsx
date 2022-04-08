@@ -7,6 +7,8 @@ import HomeSections from './components/HomeSections'
 import Profile from './components/Profile'
 import TransferMoney from './components/TransferMoney'
 import RecentActivity from './components/RecentActivity'
+import ProfileData from './components/ProfileData'
+import ChangePassword from './components/ChangePassword'
 
 
 
@@ -18,7 +20,10 @@ function App() {
       <Route path='/register' element={<SignUp />} />
       <Route path='/home' element={<Home />}>
         <Route path='/home' element={<HomeSections />} />
-        <Route path='profile' element={<Profile />} />
+        <Route path='profile' element={<Profile />} >
+          <Route path='/home/profile' element={<ProfileData />} />
+          <Route path='/home/profile/changePassword' element={<ChangePassword />} />
+        </Route>
         <Route path='transferMoney' element={<TransferMoney />} />
         <Route path='transactions-page' element={<RecentActivity />} />
       </Route>

@@ -1,4 +1,5 @@
 import { useStore } from "../Store"
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 
 export default function Profile() {
     const user = useStore(store => store.user)
@@ -16,14 +17,11 @@ export default function Profile() {
                 </div>
                 <div className="profile-main">
                     <ul>
-                        <li>Profile</li>
-                        <li>Primary Account</li>
+                        <li><Link to="/home/profile">Profile</Link></li>
+                        <li><Link to="/home/profile">Primary Account</Link></li>
+                        <li><Link to="/home/profile/changePassword">Change Password</Link></li>
                     </ul>
-                    <div className="profile-data">
-                        <div className="profile-adres"><span>Address: {user.address}</span></div>
-                        <div className="profile-email-phone"><span>Email: {user.email}</span> <span>Phone: {user.phone}</span></div>
-                        <div className="profile-dateOfBirth"><span>Date of birth: { user.dateOfBirth } </span></div>
-                    </div>
+                    <Outlet />
                 </div>
             </div>
         </div>

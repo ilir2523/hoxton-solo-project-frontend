@@ -21,6 +21,25 @@ export function createTransaction(toAccountId, fromAccountId, amount) {
         })
 }
 
+export function changePassword(email, password, newPassword) {
+    fetch('http://localhost:4001/changePassword', {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: localStorage.token
+        },
+        body: JSON.stringify({ email, password, newPassword })
+    })
+        .then(resp => resp.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error)
+            } else {
+                alert("Password changed successfully.")
+            }
+        })
+}
+
 export function fetchAccountById(id) {
     return fetch(`http://localhost:4001/account/${id}`)
         .then(resp => resp.json())

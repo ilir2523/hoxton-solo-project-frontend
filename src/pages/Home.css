@@ -330,3 +330,42 @@ div.home-page-background {
 .transactions-main::-webkit-scrollbar {
     display: none;
 }
+
+/* Change Password */
+
+.change-password {
+    display: grid;
+    place-items: center;
+}
+
+.change-password-form {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 0.5em;
+    place-items: center;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.change-password-form h3 {
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.change-password-form input {
+    padding: 0.5em;
+}
+
+.change-password-form .change-password-button {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.change-password-form .change-password-button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
