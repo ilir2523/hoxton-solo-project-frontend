@@ -6,7 +6,7 @@ import { numberWithCommas} from '../functions/Functions'
 export default function Transaction({ transaction }) {
     
     if (!transaction) return <h1>Loading...</h1>
-    
+    const user = useStore(store => store.user)
     return (
         <div className="activity" key={transaction.id}>
             <span>{transaction.completedAt.substring(0, 10)}</span>

@@ -23,7 +23,7 @@ export default function RecentActivity() {
                     <h4>Amount</h4>
                 </div>
                 <div className="transactions-main">
-                    {recentTransactions.map(transaction => (
+                    {recentTransactions?.map(transaction => (
                         <Transaction transaction={transaction} key={transaction.id} />
                     ))}
                 </div>
@@ -31,12 +31,3 @@ export default function RecentActivity() {
         </div>
     )
 }
-
-{/* <section className="activity-section">
-    <h2>Recent Activity</h2>
-    <div className="activity-container">
-        {recentTransactions.map(transaction => (
-            <Transaction transaction={transaction} key={transaction.id} />
-        ))}
-    </div>
-</section> */}

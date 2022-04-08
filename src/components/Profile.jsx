@@ -3,7 +3,7 @@ import { useStore } from "../Store"
 export default function Profile() {
     const user = useStore(store => store.user)
 
-    // console.log(user)
+    console.log(user)
     if (user === null) return <h1>Loading...</h1>
 
     return (

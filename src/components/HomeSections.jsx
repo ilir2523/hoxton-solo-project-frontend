@@ -82,7 +82,7 @@ export default function HomeSections() {
                 <section className="activity-section">
                     <h2>Recent Activity</h2>
                     <div className="activity-container">
-                        {recentTransactions.map(transaction => (
+                        {recentTransactions?.map(transaction => (
                             <Transaction transaction={transaction} key={transaction.id}/>
                         ))}
                     </div>

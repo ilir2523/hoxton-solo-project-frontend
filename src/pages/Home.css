@@ -99,6 +99,11 @@ div.home-page-background {
     grid-template-columns: 1fr 100px;
 }
 
+.sign-out-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* Profile */
 
 .profile-page,

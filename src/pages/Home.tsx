@@ -42,10 +42,10 @@ export default function Home() {
                         <main className="home-main">
                             <header>
                                 <div className="search">Search</div>
-                                <div className="profile" onClick={e => {
+                                <a className="sign-out-btn" onClick={e => {
                                     signOut()
                                     navigate('/')
-                                }}>Log Out</div>
+                                }}>Log Out</a>
                             </header>
                             <Outlet />
                         </main>

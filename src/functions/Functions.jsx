@@ -6,7 +6,8 @@ export function createTransaction(toAccountId, fromAccountId, amount) {
     fetch('http://localhost:4001/createTransfer', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            Authorization: localStorage.token
         },
         body: JSON.stringify({ toAccountId, fromAccountId, amount })
     })

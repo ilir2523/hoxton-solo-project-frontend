@@ -45,7 +45,7 @@ export default function LogIn() {
                             // @ts-ignore
                             const password = e.target.password.value
                             logIn(email, password)
-                            navigate('/home')
+                            // navigate('/home')
                             // @ts-ignore
                             document.getElementById("form").reset();
                         }}>
